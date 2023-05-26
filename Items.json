@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Album1",
+
+    "price": 100,
+
+    "imgUrl": "/image/Color smoke.jpg",
+
+    "quantity": 2
+  },
+
+  {
+    "id": 2,
+    "name": "Album2",
+
+    "price": 50,
+
+    "imgUrl": "/image/Couloured.jpg",
+
+    "quantity": 3
+  },
+
+  {
+    "id": 3,
+    "name": "Album3",
+
+    "price": 70,
+
+    "imgUrl": "/image/Mixed.jpg",
+
+    "quantity": 1
+  },
+  {
+    "id": 4,
+    "name": "Coffee",
+
+    "price": 70,
+
+    "imgUrl": "/image/Coffee.jpg",
+
+    "quantity": 1
+  },
+  {
+    "id":5,
+    "name": "color",
+
+    "price": 70,
+
+    "imgUrl": "/image/collor.jpg",
+
+    "quantity": 1
+  },
+  {
+    "id":6,
+    "name": "Shirt",
+
+    "price": 70,
+
+    "imgUrl": "/image/Shirt.jpg",
+
+    "quantity": 1
+  }
+
+
+]
