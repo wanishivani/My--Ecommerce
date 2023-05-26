@@ -11,49 +11,111 @@ export function Navbar() {
     <Navbarbs
       sticky="top"
       className="d-flex flex-column bd-highlight mb-50 mw-100  text-white"
-    style={{ margin: ".3rem", padding: "5px", height: "120px",backgroundColor:"aqua", }}
+      style={{
+        margin: ".3rem",
+        padding: "5px",
+        height: "120px",
+        backgroundColor: "aqua",
+      }}
     >
       <Container>
         <Nav className="me-auto">
-          <Nav.Link to="/" as={NavLink}>
-            <h1 className="display-4" style={{textAlign:'right',padding:'',margin:""}}> Home </h1>
-          </Nav.Link>
-
-          <Nav.Link to="/store" as={NavLink}>
-            <h1 className="display-4"> Store</h1>
-          </Nav.Link>
           <Nav.Link to="/about " as={NavLink}>
-            <h1 className="display-4 "> About</h1>
-          </Nav.Link>
-          <Nav.Link to="/contact " as={NavLink}>
-            <h1 className="display-4 "> Contact us</h1>
-
+            <h1 className="display-4 "> About</h1> <br></br>
           </Nav.Link>
         </Nav>
-        <Nav>
-          {isAuthenticated ? (
-            <li>
+        {isAuthenticated ? (
+          <>
+            <Nav>
+              <Nav.Link to="/store" as={NavLink}>
+                <h1
+                  className="d-flex flex-column bd-highlight mb-50 mw-100  text-white me-auto"
+                  style={{
+                    textAlign: "left",
+                    padding: "",
+                    margin: "",
+                    backgroundColor: "pink",
+                    borderRadius: "12px",
+                  }}
+                >
+                  {""}
+                  Store
+                </h1>
+              </Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link to="/" as={NavLink}>
+                <h1
+                  className="d-flex flex-column bd-highlight mb-50 mw-100 me-auto text-white gap{5}"
+                  style={{
+                    textAlign: "left",
+                    padding: "",
+                    margin: "",
+                    backgroundColor: "red",
+                    borderRadius: "12px",
+                  }}
+                >
+                  Home
+                </h1>
+              </Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link to="/contact " as={NavLink}>
+                <h1
+                  className="d-flex flex-column bd-highlight mb-50 mw-100  me-auto text-dark"
+                  style={{
+                    textAlign: "left",
+                    padding: "",
+                    margin: "",
+                    backgroundColor: "yellow",
+                    borderRadius: "12px",
+                  }}
+                >
+                  Contact us
+                </h1>
+              </Nav.Link>
+            </Nav>
+            <li
+              style={{ backgroundColor: "", textAlign: "justify", margin: "" }}
+            >
               <Button
                 onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
+                  logout({
+                    logoutParams: { returnTo: window.location.origin },
+                  })
                 }
               >
                 Log Out
               </Button>
             </li>
-          ) : (
+          </>
+        ) : (
+          <>
             <li>
-              <Button style={{width:'100px',borderRedious:'12px',position:'-moz-initial'}}   onClick={() => loginWithRedirect()}>Log In</Button>;
+              <Button
+                style={{
+                  width: "100px",
+                  borderRedious: "12px",
+                  position: "revert",
+                  textAlign: "center",
+                }}
+                onClick={() => loginWithRedirect()}
+              > Log In
+              </Button>
             </li>
-
-          )}
-        </Nav>
+          </>
+        )}
         {isAuthenticated && <h5>{user.name}</h5>}
 
         {cartQuantity > 0 && (
           <Button
             onClick={openCart}
-            style={{ width: "6rem ", height: "5rem", position: "realtive",color:'green' }}
+            style={{
+              width: "6rem ",
+              height: "5rem",
+              position: "realtive",
+              color: "green",
+            }}
             variant="outline-secondary"
             className="rounded-circle"
           >
@@ -71,7 +133,7 @@ export function Navbar() {
                 width: "1.1rem",
                 height: "1.5rem",
                 position: "absolute",
-                bottom: 40,
+                bottom: 0,
                 transform: "translate(25% , 25%)",
               }}
             >
@@ -79,9 +141,7 @@ export function Navbar() {
             </div>
           </Button>
         )}
-
       </Container>
-
     </Navbarbs>
   );
 }
